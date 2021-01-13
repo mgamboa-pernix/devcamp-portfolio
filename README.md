@@ -4,12 +4,12 @@
 
 ### Features
 
-— Real time chat engine for comments
+- Real time chat engine for comments
 — Blog
 — Portfolio
 — Drag and drop interface
 
-### Code exaplo
+### Code example
 
 ```ruby
 def my_great_method
