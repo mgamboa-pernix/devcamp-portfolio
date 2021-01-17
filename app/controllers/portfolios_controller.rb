@@ -14,7 +14,7 @@ class PortfoliosController < ApplicationController
 
 	    respond_to do |format|
 	      if @portfolio_item.save
-	        format.html { redirect_to portfolios_path, notice: 'Blog was successfully created.' }
+	        format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully created.' }
 	      else
 	        format.html { render :new }
 	      end
@@ -30,7 +30,7 @@ class PortfoliosController < ApplicationController
 
 	    respond_to do |format|
 			if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
-			    format.html { redirect_to portfolios_path, notice: 'Blog was successfully updated.' }
+			    format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully updated.' }
 			else
 			    format.html { render :edit }
 			end
@@ -40,4 +40,12 @@ class PortfoliosController < ApplicationController
     def show
     	@portfolio_item = Portfolio.find(params[:id])
 	end  
+
+	 def destroy
+ 		@portfolio_item = Portfolio.find(params[:id])
+	    @portfolio_item.destroy
+	    respond_to do |format|
+	      format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully deleted.' }
+	    end
+	 end
 end
