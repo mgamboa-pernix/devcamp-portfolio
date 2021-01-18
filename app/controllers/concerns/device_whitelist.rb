@@ -1,4 +1,4 @@
-module DeviseWhitelist
+module DeviceWhitelist
   extend ActiveSupport::Concern
 
   included do
